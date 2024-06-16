@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.1'
-gem 'sqlite3'
+gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -18,8 +18,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6.0'
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13.0'
-  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -31,6 +29,12 @@ group :development do
   gem 'spring-commands-rspec'
 end
 
+group :test do
+  gem 'capybara', '~> 2.15.2'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'webdrivers'
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass'
@@ -38,3 +42,4 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'paperclip'
 gem 'geocoder'
+gem 'loofah', '~> 2.19.1'
