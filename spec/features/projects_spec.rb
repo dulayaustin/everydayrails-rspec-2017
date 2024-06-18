@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
+  # include LoginSupport ## To explicitly include support module
+
   scenario "user creates a new project" do
     user = FactoryBot.create(:user)
+    # sign_in_as user   ## Custom helper module at spec/support/modules/login_support.rb
+    sign_in user        ## Devise helper `config.include Devise::Test::IntegrationHelpers, type: :feature`
 
     visit root_path
-    click_link "Sign in"
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Log in"
 
     expect {
       click_link "New Project"
@@ -16,9 +16,12 @@ RSpec.feature "Projects", type: :feature do
       fill_in "Description", with: "Trying out Capybara"
       click_button "Create Project"
 
+    }.to change(user.projects, :count).by(1)
+
+    aggregate_failures do
       expect(page).to have_content "Project was successfully created"
       expect(page).to have_content "Test Project"
       expect(page).to have_content "Owner: #{user.name}"
-    }.to change(user.projects, :count).by(1)
+    end
   end
 end
