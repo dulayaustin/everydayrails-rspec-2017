@@ -19,6 +19,19 @@ RSpec.describe Note, type: :model do
     expect(note.errors[:message]).to include("can't be blank")
   end
 
+  it "delegates name to the user who created it" do
+    # user = FactoryBot.create(:user, first_name: "Fake", last_name: "User")
+    # note = Note.new(user: user)
+
+    # user = double("user", name: "Fake User")        ### Mocks `double` the User object. It will not behaves like User class therefore when User#name method was removed the test will still pass.
+    user = instance_double("User", name: "Fake User") ### Mocks `verified double` the User object. It will be behaves like User class and will fail also when User#name method was removed.
+    note = Note.new
+    allow(note).to receive(:user).and_return(user)  ### Stubs Note method .user
+
+    expect(note.user_name).to eq "Fake User"
+    # expect(note.user.first_name).to eq "Fake"    ### This will pass on User object but not on Mock double
+  end
+
   describe "search message for a term" do
     let!(:note1) {
       FactoryBot.create(:note,
