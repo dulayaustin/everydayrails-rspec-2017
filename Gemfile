@@ -38,6 +38,8 @@ group :test do
     git: 'https://github.com/thoughtbot/shoulda-matchers.git',
     branch: 'rails-5'
   gem 'webdrivers'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -48,3 +50,4 @@ gem 'devise'
 gem 'paperclip'
 gem 'geocoder'
 gem 'loofah', '~> 2.19.1'
+gem 'bigdecimal', '1.3.5'
