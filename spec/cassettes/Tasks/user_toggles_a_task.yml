@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://chromedriver.storage.googleapis.com/LATEST_RELEASE_126.0.6478
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - chromedriver.storage.googleapis.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Content-Length:
+      - '200'
+      X-Guploader-Uploadid:
+      - ACJd0NqSVIkX3SUBd7ZJnCjhVAL69Iq1TDM3D7tR0MWHcjkDzUt745QlGnDrxvMaC1Xit7Uvj7rztgMz7A
+      Date:
+      - Sat, 22 Jun 2024 13:50:31 GMT
+      Expires:
+      - Sat, 22 Jun 2024 13:50:31 GMT
+      Cache-Control:
+      - private, max-age=0
+      Server:
+      - UploadServer
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: "<?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchKey</Code><Message>The
+        specified key does not exist.</Message><Details>No such object: chromedriver/LATEST_RELEASE_126.0.6478</Details></Error>"
+  recorded_at: Sat, 22 Jun 2024 13:50:31 GMT
+- request:
+    method: get
+    uri: https://chromedriver.storage.googleapis.com/LATEST_RELEASE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - chromedriver.storage.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Goog-Generation:
+      - '1685523462105569'
+      X-Goog-Metageneration:
+      - '1'
+      X-Goog-Stored-Content-Encoding:
+      - identity
+      X-Goog-Stored-Content-Length:
+      - '13'
+      X-Goog-Hash:
+      - crc32c=tVW4TA==
+      - md5=NoaEuIlBlniwTkiZ1T16sA==
+      X-Goog-Storage-Class:
+      - STANDARD
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '13'
+      X-Guploader-Uploadid:
+      - ACJd0NrqylKZC0qKqhNRLENUZEOpaHGw5ZIbRDog7NuPXHmrEt6w1usDM_slx7XEZlKu0LKyp7Kl7-ZVZg
+      Server:
+      - UploadServer
+      Date:
+      - Sat, 22 Jun 2024 12:59:20 GMT
+      Expires:
+      - Sat, 22 Jun 2024 13:59:20 GMT
+      Cache-Control:
+      - public, max-age=3600
+      Age:
+      - '3071'
+      Last-Modified:
+      - Wed, 31 May 2023 08:57:42 GMT
+      Etag:
+      - '"368684b889419678b04e4899d53d7ab0"'
+      Content-Type:
+      - text/plain
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: 114.0.5735.90
+  recorded_at: Sat, 22 Jun 2024 13:50:31 GMT
+recorded_with: VCR 6.0.0
